@@ -39,8 +39,10 @@ build() {
 #}
 
 package() {
-    DESTDIR="$pkgdir" cmake --install build
+    #DESTDIR="$pkgdir" cmake --install build
     #cd "${pkgname}-${pkgver}"
+    mkdir -p "$pkgdir/usr/bin"
+    install -D -m644 build/ROGueENEMY      -t "$pkgdir/usr/bin/"
     
     # systemd
     install -D -m644 rogue-enemy.service   -t "${pkgdir}/usr/lib/systemd/system/"
