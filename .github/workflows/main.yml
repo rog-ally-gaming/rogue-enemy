@@ -35,7 +35,7 @@ jobs:
           echo -e "[multilib]\nInclude = /etc/pacman.d/mirrorlist\n" >> /etc/pacman.conf
       - name: Set up git
         run: |
-          pacman -Syu --noconfirm git 
+          pacman -Syu --noconfirm git libevdev
       - name: Generate .SRCINFO
         run: |
           su build bash -c "cd /home/build/pkg && makepkg --printsrcinfo > /home/build/pkg/.SRCINFO"
