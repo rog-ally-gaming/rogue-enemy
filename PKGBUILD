@@ -1,6 +1,6 @@
 pkgname=rogue-enemy-git
-pkgver=1.0.0
-pkgrel=2
+pkgver=1.1.0
+pkgrel=3
 pkgdesc='Convert ROG Ally [RC71L] input to DualShock4 and allows mode switching with a long CC press'
 arch=('x86_64')
 url='https://github.com/NeroReflex/ROGueENEMY/'
@@ -42,7 +42,7 @@ package() {
     #DESTDIR="$pkgdir" cmake --install build
     #cd "${pkgname}-${pkgver}"
     mkdir -p "$pkgdir/usr/bin"
-    install -D -m644 build/ROGueENEMY      -t "$pkgdir/usr/bin/"
+    install -D -m755 build/ROGueENEMY      -t "$pkgdir/usr/bin/"
     
     # systemd
     install -D -m644 rogue-enemy.service   -t "${pkgdir}/usr/lib/systemd/system/"
