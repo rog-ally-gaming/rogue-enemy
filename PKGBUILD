@@ -57,5 +57,5 @@ package() {
     install -D -m644 config.cfg   -t "$pkgdir/etc/ROGueENEMY/"
 
     # license
-    #install -D -m644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
+    install -D -m644 rogue-enemy/LICENSE.md -t "${pkgdir}/usr/share/licenses/${pkgname}"
 }
