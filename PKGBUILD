@@ -14,10 +14,12 @@ provides=('rogue-enemy')
 source=(
     "rogue-enemy::git+https://github.com/NeroReflex/ROGueENEMY.git#branch=main"
     "rogue-enemy.service"
+    "config.cfg"
 )
 sha256sums=(
     'SKIP'
     'f0571dc1047fa892a200ccdaede9fed4d0af2478808e42da20d68f4673170927' # rogue-enemy.service
+    '3ae95a193ba346e805e6234f1c325b1d2830272d834a74623f7a3bb54bb420d1' # config.cfg
 )
 options=(lto)
 
@@ -51,6 +53,9 @@ package() {
     # systemd
     install -D -m644 rogue-enemy.service   -t "${pkgdir}/usr/lib/systemd/system/"
     
+    mkdir -p "$pkgdir/etc/ROGueENEMY"
+    install -D -m644 config.cfg   -t "$pkgdir/etc/ROGueENEMY/"
+
     # license
     #install -D -m644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
 }
