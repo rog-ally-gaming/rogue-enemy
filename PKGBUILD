@@ -16,7 +16,7 @@ sha256sums=(
     'SKIP'
     'f0571dc1047fa892a200ccdaede9fed4d0af2478808e42da20d68f4673170927' # rogue-enemy.service
 )
-options=(lto !check)
+options=(lto)
 
 prepare() {
     cd "rogue-enemy"
