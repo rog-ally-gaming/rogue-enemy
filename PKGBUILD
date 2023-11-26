@@ -5,7 +5,10 @@ pkgdesc='Convert ROG Ally [RC71L] input to DualShock4 and allows mode switching 
 arch=('x86_64')
 url='https://github.com/NeroReflex/ROGueENEMY/'
 license=('GPLv2')
-depends=()
+depends=(
+    'libconfig'
+    'libevdev'
+)
 makedepends=('cmake')
 provides=('rogue-enemy')
 source=(
