@@ -35,7 +35,7 @@ jobs:
           echo -e "[multilib]\nInclude = /etc/pacman.d/mirrorlist\n" >> /etc/pacman.conf
       - name: Set up git
         run: |
-          pacman -Syu --noconfirm git libevdev
+          pacman -Syu --noconfirm git libevdev clang llvm lld rsync
       - name: Generate .SRCINFO
         run: |
           su build bash -c "cd /home/build/pkg && makepkg --printsrcinfo > /home/build/pkg/.SRCINFO"
@@ -52,7 +52,7 @@ jobs:
         id: build-package
         shell: bash
         run: |
-          su build bash -c "cd /home/build/pkg  && CC=clang CXX=clang MAKEFLAGS=-j$(nproc) makepkg"
+          su build bash -c "cd /home/build/pkg  && LTOFLAGS='flto=full' LD=lld CC=clang CXX=clang MAKEFLAGS=-j$(nproc) makepkg"
       - name: Set package version
         id: set-pkg-version
         shell: bash
