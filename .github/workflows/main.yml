@@ -46,11 +46,13 @@ jobs:
         run: |
           sed -i -e 's/BUILDENV=(!distcc color !ccache check !sign)/BUILDENV=(!distcc color !ccache !check !sign)/g' /etc/makepkg.conf
           sed -i -e 's/-march=x86-64 -mtune=generic/-march=znver4/g' /etc/makepkg.conf
+          sed -i -e 's/-O2/-O3/g' /etc/makepkg.conf
+          sed -i -e 's/!lto/lto/g' /etc/makepkg.conf
       - name: Build Package
         id: build-package
         shell: bash
         run: |
-          su build bash -c "cd /home/build/pkg  && MAKEFLAGS=-j$(nproc) makepkg"
+          su build bash -c "cd /home/build/pkg  && CC=clang CXX=clang MAKEFLAGS=-j$(nproc) makepkg"
       - name: Set package version
         id: set-pkg-version
         shell: bash
