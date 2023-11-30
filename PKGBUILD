@@ -1,6 +1,6 @@
 pkgname=rogue-enemy-git
 pkgver=1.3.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Convert ROG Ally [RC71L] input to DualShock4 and allows mode switching with a long CC press'
 arch=('x86_64')
 url='https://github.com/NeroReflex/ROGueENEMY/'
@@ -49,7 +49,8 @@ package() {
     install -D -m644 rogue-enemy.service   -t "${pkgdir}/usr/lib/systemd/system/"
 
     mkdir -p "$pkgdir/etc/ROGueENEMY"
-    install -D -m644 rogue-enemy/config.cfg.default   -t "$pkgdir/etc/ROGueENEMY/config.cfg"
+    install -D -m644 rogue-enemy/config.cfg.default   -t "$pkgdir/etc/ROGueENEMY/"
+    mv "$pkgdir/etc/ROGueENEMY/config.cfg.default" "$pkgdir/etc/ROGueENEMY/config.cfg"
 
     # license
     install -D -m644 rogue-enemy/LICENSE.md -t "${pkgdir}/usr/share/licenses/${pkgname}"
