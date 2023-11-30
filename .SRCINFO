@@ -1,6 +1,6 @@
 pkgbase = rogue-enemy-git
 	pkgdesc = Convert ROG Ally [RC71L] input to DualShock4 and allows mode switching with a long CC press
-	pkgver = 1.2.0
+	pkgver = 1.3.0
 	pkgrel = 1
 	url = https://github.com/NeroReflex/ROGueENEMY/
 	arch = x86_64
@@ -12,9 +12,7 @@ pkgbase = rogue-enemy-git
 	options = lto
 	source = rogue-enemy::git+https://github.com/NeroReflex/ROGueENEMY.git#branch=main
 	source = rogue-enemy.service
-	source = config.cfg
 	sha256sums = SKIP
-	sha256sums = f0571dc1047fa892a200ccdaede9fed4d0af2478808e42da20d68f4673170927
-	sha256sums = 3ae95a193ba346e805e6234f1c325b1d2830272d834a74623f7a3bb54bb420d1
+	sha256sums = e7c8d03c3a9a516541bbacffd5cf3cf2c1ac209fde303e946d36ce1290bb7081
 
 pkgname = rogue-enemy-git
