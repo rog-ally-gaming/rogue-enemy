@@ -17,7 +17,7 @@ source=(
 )
 sha256sums=(
     'SKIP'
-    'e7c8d03c3a9a516541bbacffd5cf3cf2c1ac209fde303e946d36ce1290bb7081' # rogue-enemy.service
+    '5a21df34c56735d87e2f01b3c4fa11c81b6c9038c21b0c88726226e29d068231' # rogue-enemy.service
 )
 options=(lto)
 
