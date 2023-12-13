@@ -1,5 +1,5 @@
 pkgname=rogue-enemy-git
-pkgver=1.5.0
+pkgver=1.5.1
 pkgrel=1
 pkgdesc='Convert ROG Ally [RC71L] input to DualShock4 and allows mode switching with a long CC press'
 arch=('x86_64')
@@ -23,6 +23,9 @@ options=(lto)
 
 prepare() {
     cd "rogue-enemy"
+
+    sed -i -e 's/"bmi323"/"bmi323-imu"/g' main.c
+
     #mkdir "ally-motion-evdev/build"
     cd ..
 }
