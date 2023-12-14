@@ -8,6 +8,7 @@ Restart=always
 RestartSec=5
 WorkingDirectory=/usr/bin
 ExecStart=/usr/bin/rogue-enemy
+ExecStartPre=/bin/sleep 10
 
 [Install]
 WantedBy=multi-user.target
