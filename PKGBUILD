@@ -12,19 +12,17 @@ depends=(
 makedepends=('cmake')
 provides=('rogue-enemy')
 source=(
-    "rogue-enemy::git+https://github.com/NeroReflex/ROGueENEMY.git#branch=main"
+    "rogue-enemy::git+https://github.com/NeroReflex/ROGueENEMY.git#branch=devel"
     "rogue-enemy.service"
 )
 sha256sums=(
     'SKIP'
-    'cd4d945c395cc4055a96009c018a1a6d0a32ebb54e6322e4f9971581079ce274' # rogue-enemy.service
+    '5760426b2b8b6f06ea1d23f1ebf0322d47779e6fb5ba46688376435372d39be6' # rogue-enemy.service
 )
 options=(lto)
 
 prepare() {
     cd "rogue-enemy"
-
-    sed -i -e 's/"bmi323"/"bmi323-imu"/g' main.c
 
     #mkdir "ally-motion-evdev/build"
     cd ..

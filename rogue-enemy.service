@@ -7,7 +7,7 @@ Nice = -5
 Restart=always
 RestartSec=5
 WorkingDirectory=/usr/bin
-ExecStart=/usr/bin/rogue-enemy
+ExecStart=/usr/bin/allynone
 ExecStartPre=/bin/sleep 10
 
 [Install]
