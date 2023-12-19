@@ -14,10 +14,12 @@ provides=('rogue-enemy')
 source=(
     "rogue-enemy::git+https://github.com/NeroReflex/ROGueENEMY.git#branch=devel"
     "rogue-enemy.service"
+    "stray-ally.service"
 )
 sha256sums=(
     'SKIP'
-    '5760426b2b8b6f06ea1d23f1ebf0322d47779e6fb5ba46688376435372d39be6' # rogue-enemy.service
+    '941e4ee566627e2817b981b7b741dc09c4e7a5d6f955c07c64fb22cf84547b4f' # rogue-enemy.service
+    '0b93fbd7cd0910caba97f68dbfa23f5a7df5bdcc10fa49014ed4c7a7d62ecd0a' # stray-ally.service
 )
 options=(lto)
 
@@ -48,8 +50,14 @@ package() {
 
     # systemd
     install -D -m644 rogue-enemy.service   -t "${pkgdir}/usr/lib/systemd/system/"
+    install -D -m644 stray-ally.service   -t "${pkgdir}/usr/lib/systemd/system/"
 
     mkdir -p "$pkgdir/etc/ROGueENEMY"
+
+    install -D -m666 rogue-enemy/rogue-enemy_iio_buffer_on.sh -t "$pkgdir/usr/bin/"
+    install -D -m666 rogue-enemy/rogue-enemy_iio_buffer_off.sh -t "$pkgdir/usr/bin/"
+    install -D -m644 rogue-enemy/80-playstation.rules -t "$pkgdir/usr/lib/udev/rules.d/"
+
     install -D -m644 rogue-enemy/config.cfg.default   -t "$pkgdir/etc/ROGueENEMY/"
     mv "$pkgdir/etc/ROGueENEMY/config.cfg.default" "$pkgdir/etc/ROGueENEMY/config.cfg"
 
