@@ -1,6 +1,6 @@
 [Unit]
 Description=ROGueENEMY service
-After=stray-ally.service
+Requires=stray-ally.service
 
 [Service]
 Type=simple

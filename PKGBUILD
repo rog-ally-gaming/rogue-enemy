@@ -18,7 +18,7 @@ source=(
 )
 sha256sums=(
     'SKIP'
-    'a4461ddc9ad09c248a5f1ff9dccf87c0dd1ff3b04e82a4ce7701f6aba6992454' # rogue-enemy.service
+    '3ab522c778217c4633219824b1f950eb4526b89b3fae554f33c07ed388fcd71c' # rogue-enemy.service
     '0b93fbd7cd0910caba97f68dbfa23f5a7df5bdcc10fa49014ed4c7a7d62ecd0a' # stray-ally.service
 )
 options=(lto)
