@@ -1,7 +1,7 @@
 pkgname=rogue-enemy-git
 pkgver=1.5.1
 pkgrel=2
-pkgdesc='Convert ROG Ally [RC71L] input to DualShock4 and allows mode switching with a long CC press'
+pkgdesc='Convert ROG Ally [RC71L] input to DualShock4 or DualSense and allows mode switching with a long CC press'
 arch=('x86_64')
 url='https://github.com/NeroReflex/ROGueENEMY/'
 license=('GPLv2')
@@ -18,8 +18,8 @@ source=(
 )
 sha256sums=(
     'SKIP'
-    '3ab522c778217c4633219824b1f950eb4526b89b3fae554f33c07ed388fcd71c' # rogue-enemy.service
-    '0b93fbd7cd0910caba97f68dbfa23f5a7df5bdcc10fa49014ed4c7a7d62ecd0a' # stray-ally.service
+    'a9488856982a2ecea04c65db7ea231bbf7d656a60754c83e2a6365f86349b642' # rogue-enemy.service
+    'ab7329876393bc4f28f578e377e4c0443a7af82db7a0d20cb2ec51e403276e6e' # stray-ally.service
 )
 options=(lto)
 
@@ -31,6 +31,7 @@ prepare() {
 }
 
 build() {
+    CFLAGS+=" -ffat-lto-objects"
     cmake \
         -B build \
         -S "rogue-enemy" \
@@ -38,6 +39,8 @@ build() {
         -DCMAKE_BUILD_TYPE:STRING='Release' \
         -DCMAKE_INSTALL_PREFIX:PATH='/usr' \
         -Wno-dev
+
+
     cmake --build build
 }
 
@@ -57,6 +60,8 @@ package() {
     install -D -m755 rogue-enemy/rogue-enemy_iio_buffer_on.sh -t "$pkgdir/usr/bin/"
     install -D -m755 rogue-enemy/rogue-enemy_iio_buffer_off.sh -t "$pkgdir/usr/bin/"
     install -D -m644 rogue-enemy/80-playstation.rules -t "$pkgdir/usr/lib/udev/rules.d/"
+    install -D -m644 rogue-enemy/99-js-block.rules -t "$pkgdir/usr/lib/udev/rules.d/"
+    install -D -m644 rogue-enemy/99-xbox360-block.rules -t "$pkgdir/usr/lib/udev/rules.d/"
 
     install -D -m644 rogue-enemy/config.cfg.default   -t "$pkgdir/etc/ROGueENEMY/"
     mv "$pkgdir/etc/ROGueENEMY/config.cfg.default" "$pkgdir/etc/ROGueENEMY/config.cfg"

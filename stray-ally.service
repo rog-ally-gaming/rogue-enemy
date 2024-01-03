@@ -1,5 +1,5 @@
 [Unit]
-Description=ROGueENEMY service
+Description=STRayALLY service
 
 [Service]
 Type=simple

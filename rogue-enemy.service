@@ -10,6 +10,7 @@ RestartSec=5
 WorkingDirectory=/usr/bin
 ExecStartPre=/usr/bin/rogue-enemy_iio_buffer_on.sh
 ExecStart=/usr/bin/rogue-enemy
+ExecStop=/usr/bin/rogue-enemy_iio_buffer_off.sh
 KillSignal=SIGTERM
 
 [Install]
