@@ -60,6 +60,7 @@ package() {
     install -D -m755 rogue-enemy/rogue-enemy_iio_buffer_on.sh -t "$pkgdir/usr/bin/"
     install -D -m755 rogue-enemy/rogue-enemy_iio_buffer_off.sh -t "$pkgdir/usr/bin/"
     install -D -m644 rogue-enemy/80-playstation.rules -t "$pkgdir/usr/lib/udev/rules.d/"
+    install -D -m644 rogue-enemy/80-playstation-no-libinput.rules -t "$pkgdir/usr/lib/udev/rules.d/"
     install -D -m644 rogue-enemy/99-js-block.rules -t "$pkgdir/usr/lib/udev/rules.d/"
     install -D -m644 rogue-enemy/99-xbox360-block.rules -t "$pkgdir/usr/lib/udev/rules.d/"
 
