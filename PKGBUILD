@@ -1,6 +1,6 @@
 pkgname=rogue-enemy-git
-pkgver=1.5.1
-pkgrel=2
+pkgver=2.0.0
+pkgrel=1
 pkgdesc='Convert ROG Ally [RC71L] input to DualShock4 or DualSense and allows mode switching with a long CC press'
 arch=('x86_64')
 url='https://github.com/NeroReflex/ROGueENEMY/'
@@ -12,7 +12,7 @@ depends=(
 makedepends=('cmake')
 provides=('rogue-enemy')
 source=(
-    "rogue-enemy::git+https://github.com/NeroReflex/ROGueENEMY.git#branch=devel"
+    "rogue-enemy::git+https://github.com/NeroReflex/ROGueENEMY.git#branch=main"
     "rogue-enemy.service"
     "stray-ally.service"
 )
