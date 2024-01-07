@@ -1,5 +1,5 @@
 pkgname=rogue-enemy-git
-pkgver=2.0.0
+pkgver=2.1.0
 pkgrel=1
 pkgdesc='Convert ROG Ally [RC71L] input to DualShock4 or DualSense and allows mode switching with a long CC press'
 arch=('x86_64')
