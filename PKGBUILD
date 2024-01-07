@@ -40,7 +40,6 @@ build() {
         -DCMAKE_INSTALL_PREFIX:PATH='/usr' \
         -Wno-dev
 
-
     cmake --build build
 }
 
