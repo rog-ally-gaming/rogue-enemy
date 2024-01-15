@@ -1,6 +1,6 @@
 pkgbase = rogue-enemy
 	pkgdesc = Convert ROG Ally [RC71L] input to DualShock4 or DualSense and allows mode switching and easy thermal profile change
-	pkgver = 2.2.0
+	pkgver = 2.2.1
 	pkgrel = 1
 	url = https://github.com/NeroReflex/ROGueENEMY/
 	arch = x86_64
@@ -10,10 +10,10 @@ pkgbase = rogue-enemy
 	depends = libevdev
 	provides = rogue-enemy
 	options = lto
-	source = https://github.com/NeroReflex/ROGueENEMY/archive/refs/tags/v2.2.0.tar.gz
+	source = https://github.com/NeroReflex/ROGueENEMY/archive/refs/tags/v2.2.1.tar.gz
 	source = rogue-enemy.service
 	source = stray-ally.service
-	sha256sums = c1f166b9b03fa2d418d3c857b828dd058cea8b1b3ff045f2ddba5fb715d13f48
+	sha256sums = e8e7758413b68f64d265957f67a45082a4c405dd42d76173270c282ae2c16b18
 	sha256sums = a9488856982a2ecea04c65db7ea231bbf7d656a60754c83e2a6365f86349b642
 	sha256sums = ab7329876393bc4f28f578e377e4c0443a7af82db7a0d20cb2ec51e403276e6e
 
